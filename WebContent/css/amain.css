@@ -1,0 +1,24 @@
+.table {
+    position: absolute;
+    top: 20px;
+    width: 99%;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
+
+.table thead tr th,
+.table tbody tr td {
+    padding: 8px 12px;
+    text-align: center;
+    color: #333;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+a{
+    text-decoration: none;
+}
+th{
+    font-weight: bolder;
+    font-size: 18px;
+}

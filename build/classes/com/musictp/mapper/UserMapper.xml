@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.musictp.dao.managerDao">
+
+	<select id="getManager" parameterType="com.musictp.entity.Manager" resultType="com.musictp.entity.Manager">
+		SELECT * FROM manager where code=#{code} and password=#{password}
+	</select>
+	<select id="audiencelogin" parameterType="com.musictp.entity.Audience" resultType="com.musictp.entity.Audience">
+		SELECT * FROM audience where name=#{name} and password=#{password}
+	</select>
+	<select id="getAudience" resultType="com.musictp.entity.Audience">
+	select * from audience
+	</select>
+	<insert id="addAudience" parameterType="com.musictp.entity.Audience">
+	insert into audience(name,password,sex,telephone,email)
+	values(#{name},#{password},#{sex},#{telephone},#{email})
+	</insert>
+	<select id="getAudienceById" parameterType="int" resultType="com.musictp.entity.Audience">
+	select * from audience where id=#{id}
+	</select>	
+	<update id="updateAudience" parameterType="com.musictp.entity.Audience" >
+	update audience
+	set name=#{name},
+	password=#{password},
+	sex=#{sex},
+	telephone=#{telephone},
+	email=#{email}
+	where id=#{id}
+	</update>
+	<delete id="deleteAudience" parameterType="int">
+	delete from audience where id=#{id}
+	</delete>
+	
+
+	<select id="getSinger" resultType="com.musictp.entity.Singer">
+	select * from singer
+	</select>
+	<insert id="addSinger" parameterType="com.musictp.entity.Singer">
+	insert into singer(id,name,sex,image)
+	values(#{id},#{name},#{sex},#{image})
+	</insert>
+	<select id="getSingerById" parameterType="int" resultType="com.musictp.entity.Singer">
+	select * from singer where id=#{id}
+	</select>	
+	<update id="updateSinger" parameterType="com.musictp.entity.Singer" >
+	update singer
+	set name=#{name},	
+	sex=#{sex}
+	where id=#{id}
+	</update>
+	<delete id="deleteSinger" parameterType="int">
+	delete from singer where id=#{id}
+	</delete>
+	
+
+	<select id="getPlatform" resultType="com.musictp.entity.Platform">
+	select * from platform
+	</select>
+	<insert id="addPlatform" parameterType="com.musictp.entity.Platform">
+	insert into platform(address,sname1,simg1,sname2,simg2)
+	values(#{address},#{sname1},#{simg1},#{sname2},#{simg2})
+	</insert>
+	<select id="getPlatformById" parameterType="int" resultType="com.musictp.entity.Platform">
+	select * from platform where pid=#{pid}
+	</select>
+	<delete id="deletePlatform" parameterType="int">
+	delete from platform where pid=#{pid}
+	</delete>
+    <update id="updateTicket" parameterType="com.musictp.entity.Platform" >
+	update platform
+	set 
+	ticket1=#{ticket1},	
+	ticket2=#{ticket2}	
+	where pid=#{pid}
+	</update>
+<update id="updateaTicket" parameterType="com.musictp.entity.Audience" >
+	update audience
+	set 
+	ticket=#{ticket}
+	where id=#{id}
+	</update>
+		
+</mapper>

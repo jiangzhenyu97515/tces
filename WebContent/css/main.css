@@ -1,0 +1,24 @@
+body{
+    background:url("/MusicTP_Online/img/1.jpg") no-repeat;
+    margin-left: 5%;
+    background-size:100% ;
+}
+li{
+    margin-top: 10px;
+    font-size: 20px;
+    list-style: none;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+.box_1>ul>li>a:hover{
+    color: #fafafa;
+    font-size: 28px;
+    transition: all  0.5s;
+}
+.box_2>ul>li>a:hover{
+    color: #fafafa;
+    font-size: 28px;
+    transition: all  0.5s;
+}
